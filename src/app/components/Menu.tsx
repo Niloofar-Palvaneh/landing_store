@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { menuItems } from './../../../sharedData'
 import Image from 'next/image'
 import PrimaryBTN from './PrimaryBTN'
+import { REGISTER_LOGIN } from '../../../words'
 
 function Menu() {
     const [isShowMenu, setIsShowMenu] = useState(false)
@@ -24,7 +25,7 @@ function Menu() {
                     <Image className='w-4 cursor-pointer hidden md:inline' alt='جست و جو' src={"/icons/search.svg"} width={100} height={100} />
                     <Image className='w-4 cursor-pointer' alt='سبد خرید' src={"/icons/bag.svg"} width={100} height={100} />
                     <div className='hidden md:inline'>
-                        <PrimaryBTN title="ثبت نام / ورود" link="/" />
+                        <PrimaryBTN title={REGISTER_LOGIN} link="/" />
                     </div>
                 </div>
                 <Image onClick={isShowMenuHandler} className='w-6 cursor-pointer inline md:hidden' alt='منو همبرگری' src={"/icons/menu.svg"} width={100} height={100} />
