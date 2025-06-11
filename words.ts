@@ -8,3 +8,6 @@ export const REGISTER_LOGIN = "ثبت نام / ورود"
 export const DRESS_FOR_THE_POSITION_YOU_ARE_STANDING_IN = "لباسی برای جایگاهی که در آن ایستاده ای"
 export const SPECIAL_COLLECTION_FOR_WOMEN_WHO_LIVE_UNIQUE   = "کالکشنی خاص برای بانوانی که خاص بودن را زندگی می‌کنند"
 export const VIEW_PRODUCTS = "مشاهده محصولات"
+export const BEST_SELLING_PRODUCTS = "پرفروش ترین محصولات"
+export const TOMAN = "تومان"
+

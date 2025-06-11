@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import React, { useState } from "react";
+import { TOMAN } from "../../../words";
 
 const formatPrice = (num) => num.toLocaleString("fa-IR");
 
@@ -28,19 +29,14 @@ const Slider = ({ items }) => {
   return (
     <div className="relative w-full max-w-6xl mx-auto p-4 overflow-hidden">
       {/* دکمه‌ها */}
-      <button
-        onClick={next}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10"
-      >
-        ◀
-      </button>
-      <button
+      <Image
         onClick={prev}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10"
-      >
-        ▶
-      </button>
-
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 w-12"
+        src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
+      <Image
+        onClick={next}
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10  rotate-180  w-12"
+        src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
       {/* اسلایدها */}
       <div className="flex transition-transform duration-500 ease-in-out ">
         {getSlides().map((item) => (
@@ -63,10 +59,10 @@ const Slider = ({ items }) => {
                 {item.discountPercentage > 0 ? (
                   <div className="flex flex-col items-end gap-1">
                     <p className="text-gray-400 line-through text-sm text-start w-full block">
-                      {formatPrice(item.priceBeforeDiscount)} تومان
+                      {formatPrice(item.priceBeforeDiscount)} {TOMAN}
                     </p>
                     <div className="w-full flex items-center justify-between">
-                      <span className="text-red-500 ">{formatPrice(item.price)} تومان</span>
+                      <span className="text-red-500 ">{formatPrice(item.price)} {TOMAN}</span>
 
                     </div>
                     <span className=" bg-secondary p-1 text-sm font-medium absolute top-0 left-2">
@@ -75,7 +71,7 @@ const Slider = ({ items }) => {
                   </div>
                 ) : (
                   <span className="text-start w-full">
-                    {formatPrice(item.price)} تومان
+                    {formatPrice(item.price)} {TOMAN}
                   </span>
                 )}
                 <div className="flex items-center gap-1 mb-1">
@@ -83,7 +79,7 @@ const Slider = ({ items }) => {
                     item.colors.slice(0, 3).map(itemColor => (
                       <div
                         key={itemColor.id}
-                       className={`w-4 h-4 bg-${itemColor.color}`}
+                        className={`w-4 h-4 bg-${itemColor.color}`}
                       ></div>
                     ))
                   }
