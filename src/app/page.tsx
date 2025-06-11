@@ -34,6 +34,9 @@ export default function Home() {
           <Slider items={sliderItems} />
         </div>
       </div>
+      <Image src={"/imgs/banner.png"} width={10000} height={10000} alt="banner" className="w-full hidden md:block " />
+      <Image src={"/imgs/banner-mobile.png"} width={10000} height={10000} alt="banner" className="w-full block md:hidden  " />
+
       <p>
         sdmv
       </p>
