@@ -1,14 +1,32 @@
 "use client"
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TOMAN } from "../../../words";
 
 const formatPrice = (num) => num.toLocaleString("fa-IR");
 
 const Slider = ({ items }) => {
   const [index, setIndex] = useState(0);
-  const visibleCount = 3;
+  const [visibleCount, setVisibleCount] = useState(3); // ← مقدار پیش‌فرض دسکتاپ
   const total = items.length;
+
+  // ریسپانسیو کردن visibleCount
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setVisibleCount(1); // موبایل
+      } else if (width < 1024) {
+        setVisibleCount(2); // تبلت
+      } else {
+        setVisibleCount(3); // دسکتاپ
+      }
+    };
+
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
 
   const next = () => {
     setIndex((prev) => (prev + visibleCount) % total);
@@ -31,18 +49,20 @@ const Slider = ({ items }) => {
       {/* دکمه‌ها */}
       <Image
         onClick={prev}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 w-12 cursor-pointer"
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 w-10 cursor-pointer"
         src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
       <Image
         onClick={next}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10  rotate-180  w-12 cursor-pointer"
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 rotate-180 w-10 cursor-pointer"
         src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
+
       {/* اسلایدها */}
       <div className="flex transition-transform duration-500 ease-in-out items-stretch">
         {getSlides().map((item) => (
           <div
             key={item.id}
-            className="min-w-[33.3333%] p-2">
+            className={`p-2 min-w-[100%] sm:min-w-[50%] lg:min-w-[33.3333%]`}
+          >
             <div className="bg-gray-100 border border-gray-200 shadow-xl p-4 flex flex-col justify-between h-full relative group overflow-hidden">
 
               {/* عکس و لایه‌ی هاور */}
@@ -54,8 +74,6 @@ const Slider = ({ items }) => {
                   alt={item.title}
                   className="w-full object-contain"
                 />
-
-                {/* لایه هاور */}
                 <div className="absolute bottom-0 left-0 w-full h-16 bg-white/30 backdrop-blur-md flex items-center justify-center gap-4 text-sm font-bold text-gray-800 translate-y-full group-hover:translate-y-0 transition-all duration-500">
                   <div className="border border-gray-600 text-gray-600 p-1 w-6 h-6 text-center">S</div>
                   <div className="border border-gray-600 text-gray-600 p-1 w-6 h-6 text-center">M</div>
@@ -63,19 +81,11 @@ const Slider = ({ items }) => {
                 </div>
               </div>
 
-              {/* عنوان و آیکن قلب */}
               <div className="flex items-center justify-between w-full mt-2">
                 <h3>{item.title}</h3>
-                <Image
-                  src={"/icons/galb.svg"}
-                  width={100}
-                  height={100}
-                  alt="پسندیدن"
-                  className="w-4"
-                />
+                <Image src={"/icons/galb.svg"} width={100} height={100} alt="پسندیدن" className="w-4" />
               </div>
 
-              {/* قیمت و رنگ‌ها */}
               <div className="w-full flex justify-between items-end mt-auto">
                 {item.discountPercentage > 0 ? (
                   <div className="flex flex-col items-end gap-1 w-full">
@@ -83,9 +93,7 @@ const Slider = ({ items }) => {
                       {formatPrice(item.priceBeforeDiscount)} {TOMAN}
                     </p>
                     <div className="w-full flex items-center justify-between">
-                      <span className="text-red-500">
-                        {formatPrice(item.price)} {TOMAN}
-                      </span>
+                      <span className="text-red-500">{formatPrice(item.price)} {TOMAN}</span>
                     </div>
                     <span className="bg-secondary p-1 text-sm font-medium absolute top-0 left-2">
                       {item.discountPercentage}%
@@ -96,8 +104,6 @@ const Slider = ({ items }) => {
                     {formatPrice(item.price)} {TOMAN}
                   </span>
                 )}
-
-                {/* رنگ‌ها */}
                 <div className="flex items-center gap-1 mb-1">
                   {
                     item.colors.slice(0, 3).map(itemColor => (
