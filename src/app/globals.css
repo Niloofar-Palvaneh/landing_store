@@ -22,6 +22,6 @@ body{
   font-family: 'mikhak_ttf' , 'mikhak_woff2';
   direction: rtl;
 }
- ::-webkit-scrollbar {
+ /* ::-webkit-scrollbar {
   display: none;
-}
+} */
