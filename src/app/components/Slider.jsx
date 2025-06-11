@@ -31,66 +31,84 @@ const Slider = ({ items }) => {
       {/* دکمه‌ها */}
       <Image
         onClick={prev}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 w-12"
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 w-12 cursor-pointer"
         src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
       <Image
         onClick={next}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10  rotate-180  w-12"
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10  rotate-180  w-12 cursor-pointer"
         src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
       {/* اسلایدها */}
-      <div className="flex transition-transform duration-500 ease-in-out ">
+      <div className="flex transition-transform duration-500 ease-in-out items-stretch">
         {getSlides().map((item) => (
           <div
             key={item.id}
-            className="min-w-[33.3333%] p-2"
-          >
-            <div className="bg-gray-100 border border-gray-200 shadow-xl  p-4 flex flex-col items-center gap-3 relative">
-              <Image
-                width={100} height={100}
-                src={item.img}
-                alt={item.title}
-                className="w-full object-contain"
-              />
-              <div className="flex items-center justify-between w-full">
-                <h3>{item.title}</h3>
-                <Image src={"/icons/galb.svg"} width={100} height={100} alt="پسندیدن" className="w-4" />
+            className="min-w-[33.3333%] p-2">
+            <div className="bg-gray-100 border border-gray-200 shadow-xl p-4 flex flex-col justify-between h-full relative group overflow-hidden">
+
+              {/* عکس و لایه‌ی هاور */}
+              <div className="relative w-full overflow-hidden">
+                <Image
+                  width={100}
+                  height={100}
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full object-contain"
+                />
+
+                {/* لایه هاور */}
+                <div className="absolute bottom-0 left-0 w-full h-16 bg-white/30 backdrop-blur-md flex items-center justify-center gap-4 text-sm font-bold text-gray-800 translate-y-full group-hover:translate-y-0 transition-all duration-500">
+                  <div className="border border-gray-600 text-gray-600 p-1 w-6 h-6 text-center">S</div>
+                  <div className="border border-gray-600 text-gray-600 p-1 w-6 h-6 text-center">M</div>
+                  <div className="border border-gray-600 text-gray-600 p-1 w-6 h-6 text-center">XL</div>
+                </div>
               </div>
-              <div className="w-full flex justify-between items-end">
+
+              {/* عنوان و آیکن قلب */}
+              <div className="flex items-center justify-between w-full mt-2">
+                <h3>{item.title}</h3>
+                <Image
+                  src={"/icons/galb.svg"}
+                  width={100}
+                  height={100}
+                  alt="پسندیدن"
+                  className="w-4"
+                />
+              </div>
+
+              {/* قیمت و رنگ‌ها */}
+              <div className="w-full flex justify-between items-end mt-auto">
                 {item.discountPercentage > 0 ? (
-                  <div className="flex flex-col items-end gap-1">
-                    <p className="text-gray-400 line-through text-sm text-start w-full block">
+                  <div className="flex flex-col items-end gap-1 w-full">
+                    <p className="text-gray-400 line-through text-sm">
                       {formatPrice(item.priceBeforeDiscount)} {TOMAN}
                     </p>
                     <div className="w-full flex items-center justify-between">
-                      <span className="text-red-500 ">{formatPrice(item.price)} {TOMAN}</span>
-
+                      <span className="text-red-500">
+                        {formatPrice(item.price)} {TOMAN}
+                      </span>
                     </div>
-                    <span className=" bg-secondary p-1 text-sm font-medium absolute top-0 left-2">
+                    <span className="bg-secondary p-1 text-sm font-medium absolute top-0 left-2">
                       {item.discountPercentage}%
                     </span>
                   </div>
                 ) : (
-                  <span className="text-start w-full">
+                  <span className="w-full text-start">
                     {formatPrice(item.price)} {TOMAN}
                   </span>
                 )}
+
+                {/* رنگ‌ها */}
                 <div className="flex items-center gap-1 mb-1">
                   {
                     item.colors.slice(0, 3).map(itemColor => (
-                      <div
-                        key={itemColor.id}
-                        className={`w-4 h-4 bg-${itemColor.color}`}
-                      ></div>
+                      <div key={itemColor.id} className={`w-4 h-4 bg-${itemColor.color}`}></div>
                     ))
                   }
-
-                  {
-                    item.colors.length > 3 && (
-                      <div className="w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center font-bold text-gray-700">
-                        +{item.colors.length - 3}
-                      </div>
-                    )
-                  }
+                  {item.colors.length > 3 && (
+                    <div className="w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center font-bold text-gray-700">
+                      +{item.colors.length - 3}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
