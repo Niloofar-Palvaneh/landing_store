@@ -6,9 +6,9 @@ import SecondaryBTN from "./SecondaryBTN";
 import PrimaryBTN from "./PrimaryBTN";
 
 
-const formatPrice = (num) => num.toLocaleString("fa-IR");
+const formatPrice = (num: any) => num.toLocaleString("fa-IR");
 
-const Slider = ({ items, isBgGreen, title, btnText }) => {
+const Slider = ({ items, isBgGreen, title, btnText }: any) => {
   const [index, setIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3); // ← مقدار پیش‌فرض دسکتاپ
   const total = items.length;
@@ -131,8 +131,12 @@ const Slider = ({ items, isBgGreen, title, btnText }) => {
                       )}
                       <div className="flex items-center gap-1 mb-1">
                         {
-                          item.colors.slice(0, 3).map(itemColor => (
-                            <div key={itemColor.id} className={`w-4 h-4 bg-${itemColor.color}`}></div>
+                          item.colors.slice(0, 3).map((itemColor: { id: number; color: string }) => (
+                            <div
+                              key={itemColor.id}
+                              style={{ backgroundColor: itemColor.color }}
+                              className="w-4 h-4"
+                            ></div>
                           ))
                         }
                         {item.colors.length > 3 && (
