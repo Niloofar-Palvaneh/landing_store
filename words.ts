@@ -6,10 +6,12 @@ export const BRANCHES = "شعب"
 export const CREATE_YOUR_STYLE = "استایلتو بساز"
 export const REGISTER_LOGIN = "ثبت نام / ورود"
 export const DRESS_FOR_THE_POSITION_YOU_ARE_STANDING_IN = "لباسی برای جایگاهی که در آن ایستاده ای"
-export const SPECIAL_COLLECTION_FOR_WOMEN_WHO_LIVE_UNIQUE   = "کالکشنی خاص برای بانوانی که خاص بودن را زندگی می‌کنند"
+export const SPECIAL_COLLECTION_FOR_WOMEN_WHO_LIVE_UNIQUE = "کالکشنی خاص برای بانوانی که خاص بودن را زندگی می‌کنند"
 export const VIEW_PRODUCTS = "مشاهده محصولات"
 export const BEST_SELLING_PRODUCTS = "پرفروش ترین محصولات"
 export const TOMAN = "تومان"
 export const STORE_BLOGS = "وبلاگ فروشگاه"
 export const VIEW_ALL = "مشاهده همه"
+export const FOLLOW_US = "ما را دنبال کنید"
+
 
