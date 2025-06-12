@@ -22,21 +22,9 @@ export default function Home() {
     <>
       <Head />
       <Category />
-      <div className="md:grid md:grid-cols-4 flex flex-col mt-8">
-        <div className="flex md:flex-col items-center justify-center text-center gap-4">
-          <div className="flex md:flex-col items-center justify-center text-center  gap-2">
-            <Image className="md:w-24 w-6" src={"/icons/par-par-green.svg"} width={100} height={100} alt="عکس" />
-            <h2 className=" md:text-4xl font-bold text-shadow-lg ">{BEST_SELLING_PRODUCTS}</h2> 
-          </div>
-          <SecondaryBTN title={VIEW_PRODUCTS} link="/" />
-        </div>
-        <div className="grid col-span-3">
-          <Slider items={sliderItems} />
-        </div>
-      </div>
+      <Slider items={sliderItems} isBgGreen={false} title={BEST_SELLING_PRODUCTS} btnText={VIEW_PRODUCTS} />
       <Image src={"/imgs/banner.png"} width={10000} height={10000} alt="banner" className="w-full hidden md:block " />
       <Image src={"/imgs/banner-mobile.png"} width={10000} height={10000} alt="banner" className="w-full block md:hidden  " />
-
       <p>
         sdmv
       </p>
