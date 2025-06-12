@@ -74,11 +74,11 @@ const Slider = ({ items, isBgGreen, title, btnText }) => {
             {/* دکمه‌ها */}
             <Image
               onClick={prev}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 w-10 cursor-pointer"
+              className="absolute right-0 top-1/2 -translate-y-1/2 shadow p-2 rounded-full z-10 w-10 cursor-pointer"
               src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
             <Image
               onClick={next}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 rotate-180 w-10 cursor-pointer"
+              className="absolute left-0 top-1/2 -translate-y-1/2  shadow p-2 rounded-full z-10 rotate-180 w-10 cursor-pointer"
               src={"/icons/prev.svg"} width={100} height={100} alt="btn" />
 
             {/* اسلایدها */}
