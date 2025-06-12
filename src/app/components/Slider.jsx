@@ -49,7 +49,7 @@ const Slider = ({ items, isBgGreen, title, btnText }) => {
 
   return (
     <>
-      <div className={`md:grid md:grid-cols-4 flex flex-col mt-8 ${isBgGreen && "bg-primary"}`}>
+      <div className={`md:grid md:grid-cols-4 flex flex-col mt-8 p-4 ${isBgGreen && "bg-primary"}`}>
         {
           isBgGreen ? (
             <div className="flex md:flex-col items-center justify-center text-center gap-4">
