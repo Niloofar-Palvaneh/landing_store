@@ -3,7 +3,7 @@ import Head from "./components/Head";
 import Category from "./components/Category";
 import Slider from "./components/Slider"
 import { articleItems, posts, sliderItems } from "../../sharedData";
-import { BEST_SELLING_PRODUCTS, FOLLOW_US, STORE_BLOGS, VIEW_PRODUCTS } from "../../words";
+import { BEST_SELLING_PRODUCTS, FOLLOW_US, FOOTER_DES, STORE_BLOGS, STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE, VIEW_PRODUCTS } from "../../words";
 import Gallery from "./components/Gallery";
 import ArticleSlider from "./components/ArticleSlider";
 import PostsSlider from "./components/PostsSlider";
@@ -21,8 +21,9 @@ export default function Home() {
       <Gallery />
       <ArticleSlider items={articleItems} isBgGreen={true} title={STORE_BLOGS} btnText={VIEW_PRODUCTS} />
       <PostsSlider items={posts} isBgGreen={true} title={FOLLOW_US} btnText={VIEW_PRODUCTS} />
-      <div className="flex bg-red-500 items-center justify-center w-full mt-4 py-4">
-        این المنت میره رو گالری بالا
+      <div className="md:px-12 px-6 mt-8 flex flex-col gap-4 leading-7 ">
+        <h4 className="font-bold text-xl ">{STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE}</h4>
+        <p className="text-gray-800">{FOOTER_DES}</p>
       </div>
     </>
   );
