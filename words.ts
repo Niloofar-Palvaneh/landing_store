@@ -10,4 +10,6 @@ export const SPECIAL_COLLECTION_FOR_WOMEN_WHO_LIVE_UNIQUE   = "کالکشنی خ
 export const VIEW_PRODUCTS = "مشاهده محصولات"
 export const BEST_SELLING_PRODUCTS = "پرفروش ترین محصولات"
 export const TOMAN = "تومان"
+export const STORE_BLOGS = "وبلاگ فروشگاه"
+export const VIEW_ALL = "مشاهده همه"
 
