@@ -7,6 +7,7 @@ import { BEST_SELLING_PRODUCTS, FOLLOW_US, FOOTER_DES, STORE_BLOGS, STORE_UNIQUE
 import Gallery from "./components/Gallery";
 import ArticleSlider from "./components/ArticleSlider";
 import PostsSlider from "./components/PostsSlider";
+import Footer from "./components/Footer";
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ export default function Home() {
         <h4 className="font-bold text-xl ">{STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE}</h4>
         <p className="text-gray-800">{FOOTER_DES}</p>
       </div>
+      <Footer/>
     </>
   );
 }
