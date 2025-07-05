@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "فروشگاه لباس",
   description: "خاص ترین و بروز ترین لباس ها را اینجا ببینید",
   icons: {
-    icon: "/favicon.svg", 
+    icon: "/favicon.svg", // فایل باید در public/favicon.ico قرار داشته باشه
   },
 };
 
