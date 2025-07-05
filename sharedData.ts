@@ -1,11 +1,11 @@
-import { HOME_PAGE, PRODUCTS, CONTACT_US, ABOUT_US, BRANCHES } from './words'
+import { TRANSLATION_KEYS } from './i18nKeys'
 
 export const menuItems = [
-    { id: 1, title: HOME_PAGE },
-    { id: 2, title: PRODUCTS },
-    { id: 3, title: CONTACT_US },
-    { id: 4, title: ABOUT_US },
-    { id: 5, title: BRANCHES }
+    { id: 1, title: TRANSLATION_KEYS.HOME_PAGE },
+    { id: 2, title: TRANSLATION_KEYS.PRODUCTS },
+    { id: 3, title: TRANSLATION_KEYS.CONTACT_US },
+    { id: 4, title: TRANSLATION_KEYS.ABOUT_US },
+    { id: 5, title: TRANSLATION_KEYS.BRANCHES }
 ]
 export const categoryItems = [
     { id: 1, name: "دامن", imgURL: "/imgs/cot.png" },
