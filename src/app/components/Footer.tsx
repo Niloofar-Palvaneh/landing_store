@@ -17,7 +17,7 @@ function Footer() {
                     <li>{CONTACT_US}</li>
                     <li>{PRODUCTS}</li>
                 </ul>
-                <ul className='flex gap-6 flex-col  hidden md:flex'>
+                <ul className=' gap-6 flex-col  hidden md:flex'>
                     <li className='font-bold'>{QUICK_ACCESS}</li>
                     <li>{ABOUT_US}</li>
                     <li>{CONTACT_US}</li>

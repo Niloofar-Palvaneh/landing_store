@@ -3,7 +3,7 @@ import React from 'react'
 import { DRESS_FOR_THE_POSITION_YOU_ARE_STANDING_IN, SPECIAL_COLLECTION_FOR_WOMEN_WHO_LIVE_UNIQUE, VIEW_PRODUCTS } from '../../../words'
 import PrimaryBTN from './PrimaryBTN'
 
-function Head() {
+function Header() {
     return (
         <div className="relative md:bg-[url('/imgs/head1.png')] bg-[url('/imgs/head2.png')] bg-no-repeat bg-cover md:bg-center bg-top ">
             <div className="p-4 text-white pt-32 md:pr-24 pr:12 pb-32">
@@ -20,4 +20,4 @@ function Head() {
     )
 }
 
-export default Head
+export default Header

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Head from "./components/Head";
+import Head from 'next/head'
+import Header from "./components/Head";
 import Category from "./components/Category";
 import Slider from "./components/Slider"
 import { articleItems, posts, sliderItems } from "../../sharedData";
@@ -13,7 +14,12 @@ export default function Home() {
 
   return (
     <>
-      <Head />
+      <Head>
+        <title>فروشگاه لباس | خاص‌ترین استایل‌ها برای شما</title>
+        <meta name="description" content="فروشگاه لباس با مجموعه‌ای از خاص‌ترین و پرمیوم‌ترین استایل‌ها برای سلیقه‌ی شما." />
+      </Head>
+
+      <Header />
       <Category />
       <Slider items={sliderItems} isBgGreen={false} title={BEST_SELLING_PRODUCTS} btnText={VIEW_PRODUCTS} />
       <Image src={"/imgs/banner.png"} width={10000} height={10000} alt="banner" className="w-full hidden md:block " />
@@ -26,7 +32,7 @@ export default function Home() {
         <h4 className="font-bold text-xl ">{STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE}</h4>
         <p className="text-gray-800">{FOOTER_DES}</p>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
