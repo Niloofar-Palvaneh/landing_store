@@ -1,5 +1,26 @@
 {
   "title": "Clothing Store",
   "description": "See the most exclusive and up-to-date clothes here",
-  "change_language": "Change Language"
+  "change_language": "Change Language",
+  "HOME_PAGE": "Home Page",
+  "PRODUCTS": "Products",
+  "CONTACT_US": "Contact Us",
+  "ABOUT_US": "About Us",
+  "BRANCHES": "Branches",
+  "CREATE_YOUR_STYLE": "Create Your Style",
+  "REGISTER_LOGIN": "Sign Up / Login",
+  "DRESS_FOR_THE_POSITION_YOU_ARE_STANDING_IN": "Dress for the position you are standing in",
+  "SPECIAL_COLLECTION_FOR_WOMEN_WHO_LIVE_UNIQUE": "A special collection for women who live uniquely",
+  "VIEW_PRODUCTS": "View Products",
+  "BEST_SELLING_PRODUCTS": "Best Selling Products",
+  "TOMAN": "Toman",
+  "STORE_BLOGS": "Store Blog",
+  "VIEW_ALL": "View All",
+  "FOLLOW_US": "Follow Us",
+  "STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE": "A store with unique and premium clothing for your taste",
+  "FOOTER_DES": "If you are looking for a unique outfit for parties, formal events, or a memorable evening, the Ava women's dress with its unique design and precise tailoring is an excellent choice for you. This dress is a blend of classic beauty and modern details that aligns perfectly with the body shape and conveys a sense of luxury and confidence.",
+  "CONTACT_INFORMATION": "Contact Information",
+  "QUICK_ACCESS": "Quick Access",
+  "PHONE_NUMBER": "(021) 26205869",
+  "ADDRESS": "Tehran, Africa Blvd, Shahid Dastgerdi Street"
 }
