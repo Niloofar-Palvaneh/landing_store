@@ -8,11 +8,11 @@ export const menuItems = [
     { id: 5, title: TRANSLATION_KEYS.BRANCHES }
 ]
 export const categoryItems = [
-    { id: 1, name: "دامن", imgURL: "/imgs/cot.png" },
-    { id: 2, name: "کت", imgURL: "/imgs/daman.jpg" },
-    { id: 3, name: "مانتو", imgURL: "/imgs/manto.png" },
-    { id: 4, name: "شلوار", imgURL: "/imgs/shalvar.png" },
-    { id: 5, name: "اکسسوری", imgURL: "/imgs/axsesory.png" },
+    { id: 1, name: TRANSLATION_KEYS.SKIRT, imgURL: "/imgs/cot.png" },
+    { id: 2, name: TRANSLATION_KEYS.COAT, imgURL: "/imgs/daman.jpg" },
+    { id: 3, name: TRANSLATION_KEYS.MANTO, imgURL: "/imgs/manto.png" },
+    { id: 4, name: TRANSLATION_KEYS.PANTS, imgURL: "/imgs/shalvar.png" },
+    { id: 5, name: TRANSLATION_KEYS.ACCESSORY, imgURL: "/imgs/axsesory.png" },
 ]
 
 export const sliderItems = [
