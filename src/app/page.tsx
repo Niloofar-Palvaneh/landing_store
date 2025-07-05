@@ -11,11 +11,13 @@ import Gallery from "./components/Gallery";
 import ArticleSlider from "./components/ArticleSlider";
 import PostsSlider from "./components/PostsSlider";
 import Footer from "./components/Footer";
+import { TRANSLATION_KEYS } from "../../i18nKeys";
+import { useMyTranslation } from "@/hooks/useMyTranslation";
 
 
 
 export default function Home() {
-
+ const { t } = useMyTranslation();
 
   return (
     <>
@@ -28,16 +30,16 @@ export default function Home() {
       <main>
         <Header />
         <Category />
-        <Slider items={sliderItems} isBgGreen={false} title={BEST_SELLING_PRODUCTS} btnText={VIEW_PRODUCTS} />
+        <Slider items={sliderItems} isBgGreen={false} title={t(TRANSLATION_KEYS.BEST_SELLING_PRODUCTS)} btnText={t(TRANSLATION_KEYS.VIEW_PRODUCTS)} />
         <Image src={"/imgs/banner.png"} width={10000} height={10000} alt="banner" className="w-full hidden md:block " />
         <Image src={"/imgs/banner-mobile.png"} width={10000} height={10000} alt="banner" className="w-full block md:hidden  " />
-        <Slider items={sliderItems} isBgGreen={true} title={BEST_SELLING_PRODUCTS} btnText={VIEW_PRODUCTS} />
+        <Slider items={sliderItems} isBgGreen={true} title={t(TRANSLATION_KEYS.BEST_SELLING_PRODUCTS)} btnText={t(TRANSLATION_KEYS.VIEW_PRODUCTS)} />
         <Gallery />
-        <ArticleSlider items={articleItems} isBgGreen={true} title={STORE_BLOGS} btnText={VIEW_PRODUCTS} />
-        <PostsSlider items={posts} isBgGreen={true} title={FOLLOW_US} btnText={VIEW_PRODUCTS} />
+        <ArticleSlider items={articleItems} isBgGreen={true} title={t(TRANSLATION_KEYS.STORE_BLOGS)} btnText={t(TRANSLATION_KEYS.VIEW_PRODUCTS)} />
+        <PostsSlider items={posts} isBgGreen={true} title={t(TRANSLATION_KEYS.FOLLOW_US)} btnText={t(TRANSLATION_KEYS.VIEW_PRODUCTS)} />
         <div className="md:px-12 px-6 mt-8 flex flex-col gap-4 leading-7 ">
-          <h4 className="font-bold text-xl ">{STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE}</h4>
-          <p className="text-gray-800">{FOOTER_DES}</p>
+          <h4 className="font-bold text-xl ">{t(TRANSLATION_KEYS.STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE)}</h4>
+          <p className="text-gray-800">{t(TRANSLATION_KEYS.FOOTER_DES)}</p>
         </div>
       </main>
       <Footer />

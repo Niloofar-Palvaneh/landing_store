@@ -1,14 +1,17 @@
 "use client"
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { BEST_SELLING_PRODUCTS, TOMAN, VIEW_PRODUCTS } from "../../../words";
 import SecondaryBTN from "./SecondaryBTN";
 import PrimaryBTN from "./PrimaryBTN";
+import { TRANSLATION_KEYS } from "../../../i18nKeys";
+import { useMyTranslation } from "@/hooks/useMyTranslation";
 
 
 const formatPrice = (num: any) => num.toLocaleString("fa-IR");
 
 const Slider = ({ items, isBgGreen, title, btnText }: any) => {
+  const { t } = useMyTranslation();
+
   const [index, setIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3); // ← مقدار پیش‌فرض دسکتاپ
   const total = items.length;
@@ -115,10 +118,10 @@ const Slider = ({ items, isBgGreen, title, btnText }: any) => {
                       {item.discountPercentage > 0 ? (
                         <div className="flex flex-col items-end gap-1 w-full">
                           <p className="text-gray-400 line-through text-sm w-full">
-                            {formatPrice(item.priceBeforeDiscount)} {TOMAN}
+                            {formatPrice(item.priceBeforeDiscount)} {t(TRANSLATION_KEYS.TOMAN)}
                           </p>
                           <div className="w-full flex items-center justify-between">
-                            <span className="text-red-500">{formatPrice(item.price)} {TOMAN}</span>
+                            <span className="text-red-500">{formatPrice(item.price)} {t(TRANSLATION_KEYS.TOMAN)}</span>
                           </div>
                           <span className="bg-secondary p-1 text-sm font-medium absolute top-0 left-2">
                             {item.discountPercentage}%
@@ -126,7 +129,8 @@ const Slider = ({ items, isBgGreen, title, btnText }: any) => {
                         </div>
                       ) : (
                         <span className="w-full text-start">
-                          {formatPrice(item.price)} {TOMAN}
+                          {formatPrice(item.price)}
+                          {t(TRANSLATION_KEYS.TOMAN)}
                         </span>
                       )}
                       <div className="flex items-center gap-1 mb-1">
