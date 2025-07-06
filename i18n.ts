@@ -1,20 +1,38 @@
-// i18n.ts
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import en from './locales/en/translation.json';
+import fa from './locales/fa/translation.json';
 
-import enTranslation from './locales/en/translation.json';
-import faTranslation from './locales/fa/translation.json';
+const resources = {
+  en: { translation: en },
+  fa: { translation: fa },
+};
 
 i18n
-  .use(initReactI18next) 
+  .use(initReactI18next)
   .init({
-    resources: {
-      en: { translation: enTranslation },
-      fa: { translation: faTranslation },
-    },
-    lng: 'fa', // زبان پیش‌فرض
+    resources,
+    lng: 'fa', 
     fallbackLng: 'fa',
-    interpolation: { escapeValue: false }, // برای React ضروری است
+    interpolation: {
+      escapeValue: false,
+    },
+    react: {
+      useSuspense: false, 
+    },
   });
+
+const directionMap: Record<string, 'rtl' | 'ltr'> = {
+  fa: 'rtl',
+  en: 'ltr',
+};
+
+i18n.on('languageChanged', (lng) => {
+  if (typeof document !== 'undefined') {
+    const dir = directionMap[lng] || 'ltr';
+    document.documentElement.dir = dir;
+    document.documentElement.lang = lng;
+  }
+});
 
 export default i18n;

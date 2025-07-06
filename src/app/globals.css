@@ -22,7 +22,7 @@
 
 body {
   font-family: 'mikhak_ttf', 'mikhak_woff2';
-  direction: rtl;
+  /* direction: rtl; */
 }
 
 /* ::-webkit-scrollbar {
