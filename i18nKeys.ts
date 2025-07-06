@@ -1,6 +1,11 @@
 export const TRANSLATION_KEYS = {
-    ACCESSORY : "accessory" ,
-    PANTS : "pants",
+    PAYMENT_WARNING: "payment_warning",
+    COMPLETE_THE_PURCHASE_PROCESS: "complete_the_purchase_process",
+    YOUR_PROFIT_FROM_THE_PURCHASE: "your_profit_from_the_purchase",
+    TOTAL_AMOUNT: "total_amount",
+    PRODUCT_PRICES: "product_prices",
+    ACCESSORY: "accessory",
+    PANTS: "pants",
     MANTO: "manto",
     COAT: 'coat',
     SKIRT: 'skirt',

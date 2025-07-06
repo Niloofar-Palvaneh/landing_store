@@ -1,4 +1,9 @@
 {
+  "payment_warning" : "This order has not been paid yet. If the items go out of stock, they will be removed from the cart",
+  "complete_the_purchase_process" : "Complete the purchase process",
+  "your_profit_from_the_purchase" : "Your profit from the purchase",
+  "total_amount" : "Total amount",
+  "product_prices": "Product prices",
   "accessory": "Accessory",
   "pants": "Pants",
   "manto": "Manto",
