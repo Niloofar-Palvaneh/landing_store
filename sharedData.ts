@@ -1,11 +1,11 @@
 import { TRANSLATION_KEYS } from './i18nKeys'
 
 export const menuItems = [
-    { id: 1, title: TRANSLATION_KEYS.HOME_PAGE },
-    { id: 2, title: TRANSLATION_KEYS.PRODUCTS },
-    { id: 3, title: TRANSLATION_KEYS.CONTACT_US },
-    { id: 4, title: TRANSLATION_KEYS.ABOUT_US },
-    { id: 5, title: TRANSLATION_KEYS.BRANCHES }
+    { id: 1, title: TRANSLATION_KEYS.HOME_PAGE, href: "/" },
+    { id: 2, title: TRANSLATION_KEYS.PRODUCTS, href: "/" },
+    { id: 3, title: TRANSLATION_KEYS.CONTACT_US, href: "/" },
+    { id: 4, title: TRANSLATION_KEYS.ABOUT_US, href: "/" },
+    { id: 5, title: TRANSLATION_KEYS.BRANCHES, href: "/" }
 ]
 export const categoryItems = [
     { id: 1, name: TRANSLATION_KEYS.SKIRT, imgURL: "/imgs/cot.png" },

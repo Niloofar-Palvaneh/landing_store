@@ -6,11 +6,12 @@ import PrimaryBTN from './PrimaryBTN';
 import { useMyTranslation } from '@/hooks/useMyTranslation';
 import { menuItems } from '../../../sharedData';
 import { TRANSLATION_KEYS } from '../../../i18nKeys';
+import Link from 'next/link';
 
 function Menu() {
     const [isShowMenu, setIsShowMenu] = useState(false);
     const isShowMenuHandler = () => setIsShowMenu(prev => !prev);
-    
+
     const { t, language, changeLanguage } = useMyTranslation();
     // برای تاگل زبان بین fa و en
     const handleLanguageToggle = () => {
@@ -28,14 +29,18 @@ function Menu() {
                             key={item.id}
                             className='cursor-pointer hover:text-secondary transition-all'
                         >
-                            {t(item.title)}
+                            <Link href={item.href}>
+                                {t(item.title)}
+                            </Link>
                         </li>
                     ))}
                 </ul>
 
                 <div className='flex items-center gap-8'>
                     <Image className='w-4 cursor-pointer hidden md:inline' alt='جست و جو' src="/icons/search.svg" width={100} height={100} />
-                    <Image className='w-4 cursor-pointer' alt='سبد خرید' src="/icons/bag.svg" width={100} height={100} />
+                    <Link href={"/shoppingCart"}>
+                        <Image className='w-4 cursor-pointer' alt='سبد خرید' src="/icons/bag.svg" width={100} height={100} />
+                    </Link>
 
                     {/* آیکون تغییر زبان (تاگل) */}
                     <svg onClick={handleLanguageToggle} xmlns="http://www.w3.org/2000/svg" className="size-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
