@@ -1,4 +1,11 @@
 {
+  "mail" : "email",
+  "pass" : "password",
+  "already_registered?": "already registered?",
+  "don't_have_an_account?": "don't have an account?",
+  "number": "number",
+  "login": "login",
+  "registration": "registration",
   "delete": "delete",
   "payment_warning": "This order has not been paid yet. If the items go out of stock, they will be removed from the cart",
   "complete_the_purchase_process": "Complete the purchase process",

@@ -1,4 +1,11 @@
 export const TRANSLATION_KEYS = {
+    MAIL : "mail",
+    PASS: "pass",
+    ALREADY_REGISTERED: "already_registered?",
+    NO_ACCOUNT: "don't_have_an_account?",
+    NUMBER: "number",
+    LOGIN: "login",
+    REGISTRATION: "registration",
     DELETE: "delete",
     PAYMENT_WARNING: "payment_warning",
     COMPLETE_THE_PURCHASE_PROCESS: "complete_the_purchase_process",

@@ -1,4 +1,11 @@
 {
+    "mail" : "ایمیل",
+    "pass" : "رمز عبور",
+    "already_registered?": " قبلاً ثبت‌نام کردید؟",
+    "don't_have_an_account?": " حساب ندارید؟",
+    "number": "شماره تماس",
+    "login": "ورود",
+    "registration": "ثبت‌نام",
     "delete": "حذف",
     "payment_warning": "هزینه این سفارش هنوز پرداخت نشده‌ و در صورت اتمام موجودی، کالاها از سبد حذف می‌شوند",
     "complete_the_purchase_process": "تکمیل فرایند خرید",

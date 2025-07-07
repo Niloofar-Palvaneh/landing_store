@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { TRANSLATION_KEYS } from "../../../i18nKeys";
+import { useMyTranslation } from "@/hooks/useMyTranslation";
 
 export default function LoginPage() {
-  const [isSignup, setIsSignup] = useState(false); // حالت فرم
+  const { t } = useMyTranslation();
+  const [isSignup, setIsSignup] = useState(false);
 
   return (
     <div className="flex items-center justify-center px-4 md:w-1/2 w-full">
@@ -17,7 +20,7 @@ export default function LoginPage() {
             </svg>
           </Link>
           <h1 className="text-2xl font-bold text-white mb-6 text-center">
-            {isSignup ? "ثبت‌نام" : "ورود به حساب کاربری"}
+            {isSignup ? (t(TRANSLATION_KEYS.REGISTRATION)) : (t(TRANSLATION_KEYS.LOGIN))}
           </h1>
         </div>
 
@@ -25,7 +28,7 @@ export default function LoginPage() {
           {isSignup ? (
             // فرم ثبت‌نام
             <div>
-              <label htmlFor="phone" className="block text-sm text-gray-200 mb-1">شماره تماس</label>
+              <label htmlFor="phone" className="block text-sm text-gray-200 mb-1">{t(TRANSLATION_KEYS.NUMBER)}</label>
               <input
                 type="tel"
                 id="phone"
@@ -37,7 +40,7 @@ export default function LoginPage() {
             // فرم ورود
             <>
               <div>
-                <label htmlFor="email" className="block text-sm text-gray-200 mb-1">ایمیل</label>
+                <label htmlFor="email" className="block text-sm text-gray-200 mb-1">{t(TRANSLATION_KEYS.MAIL)}</label>
                 <input
                   type="email"
                   id="email"
@@ -47,7 +50,7 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm text-gray-200 mb-1">رمز عبور</label>
+                <label htmlFor="password" className="block text-sm text-gray-200 mb-1">{t(TRANSLATION_KEYS.PASS)}</label>
                 <input
                   type="password"
                   id="password"
@@ -62,31 +65,31 @@ export default function LoginPage() {
             type="submit"
             className="w-full py-2 bg-[#AD8C47] text-[#2E4030] font-bold rounded-lg hover:bg-[#c8a750] transition"
           >
-            {isSignup ? "ادامه ثبت‌نام" : "ورود"}
+            {isSignup ? (t(TRANSLATION_KEYS.REGISTRATION)) : (t(TRANSLATION_KEYS.LOGIN))}
           </button>
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-300">
           {isSignup ? (
             <>
-              قبلاً ثبت‌نام کردید؟{" "}
+              {t(TRANSLATION_KEYS.ALREADY_REGISTERED)}{" "}
               <button
                 type="button"
                 className="text-[#AD8C47] hover:underline"
                 onClick={() => setIsSignup(false)}
               >
-                ورود
+                {t(TRANSLATION_KEYS.LOGIN)}
               </button>
             </>
           ) : (
             <>
-              حساب ندارید؟{" "}
+              {t(TRANSLATION_KEYS.NO_ACCOUNT)}{" "}
               <button
                 type="button"
                 className="text-[#AD8C47] hover:underline"
                 onClick={() => setIsSignup(true)}
               >
-                ثبت‌نام
+                {t(TRANSLATION_KEYS.REGISTRATION)}
               </button>
             </>
           )}
