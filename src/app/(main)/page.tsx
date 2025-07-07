@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import Head from 'next/head'
-import Header from "./components/Head";
-import Category from "./components/Category";
-import Slider from "./components/Slider"
-import { articleItems, posts, sliderItems } from "../../sharedData";
-import { BEST_SELLING_PRODUCTS, FOLLOW_US, FOOTER_DES, STORE_BLOGS, STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE, VIEW_PRODUCTS } from "../../words";
-import Gallery from "./components/Gallery";
-import ArticleSlider from "./components/ArticleSlider";
-import PostsSlider from "./components/PostsSlider";
-import Footer from "./components/Footer";
-import { TRANSLATION_KEYS } from "../../i18nKeys";
+import Header from "../components/Head";
+import Category from "../components/Category";
+import Slider from "../components/Slider"
+import { articleItems, posts, sliderItems } from "../../../sharedData";
+import { BEST_SELLING_PRODUCTS, FOLLOW_US, FOOTER_DES, STORE_BLOGS, STORE_UNIQUE_AND_PREMIUM_CLOTHING_FOR_YOUR_TASTE, VIEW_PRODUCTS } from "../../../words";
+import Gallery from "../components/Gallery";
+import ArticleSlider from "../components/ArticleSlider";
+import PostsSlider from "../components/PostsSlider";
+import Footer from "../components/Footer";
+import { TRANSLATION_KEYS } from "../../../i18nKeys";
 import { useMyTranslation } from "@/hooks/useMyTranslation";
 
 

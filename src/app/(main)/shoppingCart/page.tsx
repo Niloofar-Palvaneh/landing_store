@@ -1,10 +1,10 @@
 "use client"
 
 import React from 'react'
-import { TRANSLATION_KEYS } from '../../../i18nKeys'
+import { TRANSLATION_KEYS } from '../../../../i18nKeys'
 import { useMyTranslation } from '@/hooks/useMyTranslation';
 import Image from 'next/image';
-import ShoppingCardBOx from '../components/ShoppingCardBOx';
+import ShoppingCardBOx from '../../components/ShoppingCardBOx';
 
 function ShoppingCart() {
     const { t } = useMyTranslation();
